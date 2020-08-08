@@ -1,0 +1,15 @@
+<div class="comments">
+  {{#each this}}
+  <section class="comment">
+<div class="meta">
+  <div class="posted_by">
+  {{user.username}} <span class="date-created">{{format_date created_at}}</span> |
+  </div>
+  <a href="/post/{{id}}">{{comments.length}}</a>
+</div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>

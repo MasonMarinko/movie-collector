@@ -1,0 +1,28 @@
+<a href="/dashboard"> &larr; Back to dashboard</a>
+<article>
+    <div class = "entire-box">
+    <div class="dashboard-text">
+    </div>
+    <form class="edit-post-form">
+        <div class="center-items">
+        <h2>Title:</h2>
+            <textarea class="post-title" name="post-title" type="text">{{post.title}}</textarea>
+        </div>
+        <div class="center-items">
+        <h2>Post:</h2>
+            <textarea class="post-title" name="post-url" type="text">{{post.post_url}}</textarea>
+        </div>
+        <div class="posted-date">
+           Originally posted by you on {{format_date post.created_at}}
+        </div>
+        <div class="save-delete-buttons">
+        <button type="submit">Save Post</button>
+        <button type="button" class="delete-post-btn">Delete Post</button>
+        </div>
+    </form>
+    </div> 
+</article>
+
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

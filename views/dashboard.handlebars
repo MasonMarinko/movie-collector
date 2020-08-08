@@ -1,0 +1,33 @@
+<section>
+  <h2 class="title-top dashboard-title">Create New Blog Post</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <textarea class="post-title" type="text" id="post-title" name="post-title"></textarea>
+    </div>
+    <div>
+      <label for="post-url">Message</label>
+      <textarea class="post-title" id="post-url" name="post-url"></textarea>
+    </div>
+    <div class="save-delete-buttons">
+    <button type="submit" class="btn">Create</button>
+    </div>
+  </form>
+</section>
+<hr style="border: 4px solid blue;" />
+{{#if posts.length}}
+<section>
+  <h2 class="title-top dashboard-title">Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit ({{title}})</a>
+      {{> post-info post}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+</div>
+<script src="/javascript/add-post.js"></script>
