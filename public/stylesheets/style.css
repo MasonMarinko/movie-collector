@@ -20,14 +20,14 @@
 	display: block;
 	position: absolute;
 	left: 0;
-	bottom: 6em;
+	bottom: -2em;
 	width: 100%;
-	height: calc(var(--heading-height) + 10em);
+	height: calc(var(--heading-height) + 100em);
 	z-index: -1;
 	transform: skewY(-3.5deg);
 	background: 
 		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-		url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80) no-repeat center,
+		url(https://i.imgur.com/CgYJeki.jpg) no-repeat center,
 		linear-gradient(#4e4376, #2b5876);
 	background-size: cover;
 	border-bottom: .2em solid #fff;
@@ -45,10 +45,6 @@
 .text {
   font-size: 30px;
   padding-left: 20px;
-}
-
-.comment-text {
-  font-size: 30px;
 }
 
 .posted_by {
@@ -160,7 +156,7 @@ ol {
 }
 
 main {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 * {
@@ -206,7 +202,7 @@ a {
   margin-right: 27px;
   text-decoration: none;
   font-size: 30px;
-  color: #225ca3;
+  color: #fff;
   font-weight: bold;
   transition: color .1s;
 }
@@ -248,6 +244,17 @@ h2 {
 }
 
 .title-top {
+  display: flex;
+  padding-bottom: 20px;
+  height: 60px;
+  font-size: 100px;
+  color: #fff;
+  font-weight: bold;
+  transition: color .1s;
+  justify-content: center;
+}
+
+.dashboard-title {
   display: flex;
   padding-bottom: 20px;
   height: 60px;
@@ -375,7 +382,7 @@ header h1 {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: #fff;
   font-size: 20px;
   font-weight: bold;
   transition: color .1s;
@@ -395,7 +402,7 @@ header h1 {
   background-color: #ff643d;
 }
 
-.post {
+.movie {
   margin-bottom: 2%;
   line-height: 150%;
 }
@@ -411,6 +418,12 @@ header h1 {
   display: flex;
   font-size: 30px;
   justify-content: center;
+  color: #225ca3;
+}
+
+.comment-text {
+  font-size: 30px;
+  color: #225ca3;
 }
 
 .title-box {
@@ -461,7 +474,8 @@ input.break {
 }
 
 .new-post-form input {
-  width: 300px;
+  width: 500px;
+  height: auto;
 }
 
 .edit-post-form {
