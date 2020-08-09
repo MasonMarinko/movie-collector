@@ -6,12 +6,16 @@
   <div class="body-main">
   <p class="main-post">{{format_url post_url}}</p>
   </div>
+  {{#if director}}
     <div class="body-main">
   <p class="main-post">{{director}}</p>
   </div>
+  {{/if}}
+  {{#if actors}}
       <div class="body-main">
   <p class="main-post">{{actors}}</p>
   </div>
+  {{/if}}
   <div class="meta">
     <a class="comment-text" href="/movie/{{id}}">{{comments.length}} comment(s)</a>
   </div>
