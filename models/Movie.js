@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Post model
-class Post extends Model {
+// create our Movie model
+class Movie extends Model {
     static upvote(body, models) {
       return models.Vote.create({
         user_id: body.user_id,
         post_id: body.post_id
       }).then(() => {
-        return Post.findOne({
+        return Movie.findOne({
           where: {
             id: body.post_id
           },
@@ -23,8 +23,8 @@ class Post extends Model {
     }
   }
 
-// create fields/columns for Post model
-Post.init(
+// create fields/columns for Movie model
+Movie.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -39,6 +39,17 @@ Post.init(
         post_url: {
             type: DataTypes.TEXT,
             allowNull: false,
+            validate: {
+              isUrl: true
+            }
+        },
+        director: {
+          type:DataTypes.STRING,
+          allowNull: true
+        },
+        actors: {
+          type: DataTypes.STRING,
+          allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -52,8 +63,8 @@ Post.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'movie'
     }
 );
 
-module.exports = Post;
+module.exports = Movie;

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote } = require('../../models');
+const { User, Movie, Vote } = require('../../models');
 // const User = require('../../models/User');
 const withAuth = require('../../utils/auth')
 
@@ -21,11 +21,11 @@ router.get('/:id', (req, res) => {
     User.findOne({
       include: [
         {
-          model: Post,
+          model: Movie,
           attributes: ['id', 'title', 'post_url', 'created_at']
         },
         {
-          model: Post,
+          model: Movie,
           attributes: ['title'],
           through: Vote,
           as: 'voted_posts'

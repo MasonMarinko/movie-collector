@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Movie, User, Comment } = require('../models');
 const withAuth = require('../utils/auth')
 
 router.get('/', (req, res) => {
-    Post.findAll({
+    Movie.findAll({
       where: {
         // use the ID from the session
         user_id: req.session.user_id
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         'post_url',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
       ],
       include: [
         {
@@ -33,8 +33,8 @@ router.get('/', (req, res) => {
     })
       .then(dbPostData => {
         // serialize data before passing to template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        const movies = dbPostData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { movies, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
   });
 
   router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
+    Movie.findOne({
         where: {
             id: req.params.id
         },
@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
             'post_url',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
         ],
         include: [
             {
@@ -70,10 +70,10 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPostData => {
-            const post = dbPostData.get({ plain: true });
+            const movie = dbPostData.get({ plain: true });
 
             res.render('edit-post', {
-                post,
+                movie,
                 loggedIn: true
             });
         });

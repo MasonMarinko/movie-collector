@@ -1,16 +1,16 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment }= require('../models');
+const { Movie, User, Comment }= require('../models');
 
 router.get('/', (req, res) => {
     console.log(req.session);
-    Post.findAll({
+    Movie.findAll({
       attributes: [
         'id',
         'post_url',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
       ],
       include: [
         {
@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
     })
       .then(dbPostData => {
         // pass a single post object into the homepage template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+        const movies = dbPostData.map(post => post.get({ plain: true }));
         res.render('homepage', { 
-          posts,
+          movies,
         loggedIn: req.session.loggedIn
        });
       })
@@ -59,8 +59,8 @@ router.get('/', (req, res) => {
     res.render('signup');
   });
 
-  router.get('/post/:id', (req, res) => {
-    Post.findOne({
+  router.get('/movie/:id', (req, res) => {
+    Movie.findOne({
       where: {
         id: req.params.id
       },
@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
         'post_url',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
       ],
       include: [
         {
@@ -93,11 +93,11 @@ router.get('/', (req, res) => {
         }
   
         // serialize the data
-        const post = dbPostData.get({ plain: true });
+        const movie = dbPostData.get({ plain: true });
   
         // pass data to template
         res.render('single-post', { 
-          post,
+          movie,
         loggedIn: req.session.loggedIn 
       });
       })

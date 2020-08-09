@@ -1,4 +1,4 @@
-    {{> post-info post }}
+    {{> post-info movie }}
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -10,7 +10,7 @@
 </form>
 {{/if}}
 
-{{> comments post.comments}}
+{{> comments movie.comments}}
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>

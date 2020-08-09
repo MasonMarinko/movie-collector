@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, Movie } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             'comment_text', 
             'user_id', 
             'post_id',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
         ],
         order: [[ 'created_at', 'DESC']],
         include: [
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-        Post.destroy({
+         Movie.destroy({
           where: {
             id: req.params.id
           }

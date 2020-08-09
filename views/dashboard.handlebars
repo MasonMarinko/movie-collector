@@ -1,14 +1,14 @@
 <section>
-  <h2 class="title-top dashboard-title">Create New Blog Post</h2>
+  <h2 class="title-top dashboard-title">Add New Movie</h2>
 
   <form class="new-post-form">
     <div>
       <label for="post-title">Title</label>
-      <textarea class="post-title" type="text" id="post-title" name="post-title"></textarea>
+      <input type="text" class="post-title" type="text" id="post-title" name="post-title"/>
     </div>
     <div>
       <label for="post-url">Message</label>
-      <textarea class="post-title" id="post-url" name="post-url"></textarea>
+      <input type="text" class="post-title" id="post-url" name="post-url"/>
     </div>
     <div class="save-delete-buttons">
     <button type="submit" class="btn">Create</button>
@@ -16,14 +16,14 @@
   </form>
 </section>
 <hr style="border: 4px solid blue;" />
-{{#if posts.length}}
+{{#if movies.length}}
 <section>
-  <h2 class="title-top dashboard-title">Your Posts</h2>
+  <h2 class="title-top dashboard-title">Your Movies</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each movies as |movie|}}
     <li>
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit ({{title}})</a>
-      {{> post-info post}}
+      <a href="/dashboard/edit/{{movie.id}}" class="edit-link">Edit ({{title}})</a>
+      {{> post-info movie}}
     </li>
     {{/each}}
   </ol>

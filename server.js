@@ -10,9 +10,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
     secret: 'Super secret secret',
-    cookie: {
-        expires: 100 * 1800
-    },
+    // cookie: {
+    //     expires: 100 * 1800
+    // },
     resave: true,
     rolling: true,
     saveUninitialized: false,
