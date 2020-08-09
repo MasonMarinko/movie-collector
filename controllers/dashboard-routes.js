@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
         'id',
         'post_url',
         'title',
+        'director',
+        'actors',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
       ],
@@ -51,6 +53,8 @@ router.get('/', (req, res) => {
             'id',
             'post_url',
             'title',
+            'director',
+            'actors',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
         ],

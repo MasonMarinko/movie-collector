@@ -25,10 +25,9 @@
   
   async function signupPageHandler(event) {
     event.preventDefault();
-    console.log("signup clicked")
-
-    
+    console.log("signup clicked")    
     }
 
+    
 document.querySelector('#login').addEventListener('click', loginFormHandler);
 document.querySelector('#signup').addEventListener('click', signupPageHandler);

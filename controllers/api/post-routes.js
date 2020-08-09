@@ -19,6 +19,8 @@ router.get('/', (req, res) => {
                 'id',
                 'post_url',
                 'title',
+                'director',
+                'actors',
                 'created_at',
                 [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
             ],
@@ -54,6 +56,8 @@ router.get('/:id', (req, res) => {
                 'id',
                 'post_url',
                 'title',
+                'director',
+                'actors',
                 'created_at',
                 [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
 
@@ -94,6 +98,8 @@ router.post('/', (req, res) => {
     Movie.create({
             title: req.body.title,
             post_url: req.body.post_url,
+            director: req.body.director,
+            actors: req.body.actors,
             user_id: req.session.user_id
         })
         .then(dbPostData => res.json(dbPostData))
@@ -119,7 +125,9 @@ router.put('/upvote', (req, res) => {
 router.put('/:id', (req, res) => {
     Movie.update({
             title: req.body.title,
-            post_url: req.body.post_url
+            post_url: req.body.post_url,
+            director: req.body.director,
+            actors: req.body.actors,
         }, {
             where: {
                 id: req.params.id

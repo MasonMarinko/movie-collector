@@ -3,6 +3,8 @@ async function editFormHandler(event) {
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const post_url = document.querySelector('input[name="post-url"]').value.trim();
+    const director = document.querySelector('input[name="post-director"]').value.trim();
+    const actors = document.querySelector('input[name="post-actors"]').value.trim();
 
 
     const id = window.location.toString().split('/')[
@@ -13,7 +15,9 @@ async function editFormHandler(event) {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            post_url
+            post_url,
+            director,
+            actors
         }),
         headers: {
             'Content-Type': 'application/json'

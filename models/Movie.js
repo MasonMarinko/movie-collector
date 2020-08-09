@@ -6,7 +6,9 @@ class Movie extends Model {
     static upvote(body, models) {
       return models.Vote.create({
         user_id: body.user_id,
-        post_id: body.post_id
+        post_id: body.post_id,
+        director: body.director,
+        actors: body.actors
       }).then(() => {
         return Movie.findOne({
           where: {
@@ -16,6 +18,8 @@ class Movie extends Model {
             'id',
             'post_url',
             'title',
+            'director',
+            'actors',
             'created_at',
           ]
         });
@@ -44,7 +48,7 @@ Movie.init(
             }
         },
         director: {
-          type:DataTypes.STRING,
+          type: DataTypes.STRING,
           allowNull: true
         },
         actors: {
