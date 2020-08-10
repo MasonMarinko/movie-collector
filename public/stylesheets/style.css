@@ -147,7 +147,7 @@ section {
   width: 100%;
   justify-content: center;
   text-decoration: underline;
-  margin-bottom: 125px;
+  margin-bottom: 40px;
 }
 
 ol {
@@ -387,6 +387,13 @@ header h1 {
   font-weight: bold;
   transition: color .1s;
   margin-left: 16px;
+}
+
+#books-movies {
+  height: 40px;
+  width: 200px;
+  font-size: 30px;
+  margin-bottom: 45px;
 }
 
 .btn-no-style:hover {
