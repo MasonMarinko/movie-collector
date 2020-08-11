@@ -443,6 +443,10 @@ input.break {
   height: 80px;
 }
 
+.media-wrapper {
+  display: flex;
+}
+
 .testing-123 {
   font-size: 5000px;
 }
@@ -467,6 +471,10 @@ input.break {
   display: flex;
   justify-content: center;
   margin-bottom: 5%;
+}
+
+.back-dashboard {
+  color: #225ca3;
 }
 
 .comment:nth-child(odd) {

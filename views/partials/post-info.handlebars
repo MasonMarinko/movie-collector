@@ -4,7 +4,7 @@
   <p class="date-post"> Posted by {{user.username}} on {{format_date created_at}}</p>  
   </div>
   <div class="body-main">
-  <p class="main-post">{{format_url post_url}}</p>
+    <img id="myImage" class="movie-cover main-post" src="{{post_url}}" style="width:300px">
   </div>
   {{#if director}}
     <div class="body-main">

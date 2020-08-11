@@ -1,4 +1,4 @@
-<a href="/dashboard"> &larr; Back to dashboard</a>
+<a class="back-dashboard" href="/dashboard"> &larr; Back to dashboard</a>
 <article>
     <div class = "entire-box">
     <div class="dashboard-text">
@@ -11,6 +11,10 @@
         <div class="center-items">
         <h2>Post:</h2>
             <input class="post-title" name="post-url" type="text" value="{{movie.post_url}}" />
+        <h2>Directors:</h2>
+            <input class="post-title" name="post-director" type="text" value="{{movie.director}}" />
+        <h2>Actors/Actresses:</h2>
+            <input class="post-title" name="post-actors" type="text" value="{{movie.actors}}" />
         </div>
         <div class="posted-date">
            Originally posted by you on {{format_date movie.created_at}}
