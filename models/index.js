@@ -2,6 +2,7 @@ const User = require('./User');
 const Movie = require('./Movie');
 const Vote = require('./Vote');
 const Comment = require('./Comment');
+const Book = require('./Book');
 
 // create associations
 User.hasMany(Movie, {
