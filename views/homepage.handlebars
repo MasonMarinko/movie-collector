@@ -1,7 +1,15 @@
 <ol class="post-list">
+  {{#if movies}}
   {{#each movies as |movie|}}
   <li>
     {{> post-info movie }}
   </li>
   {{/each}}
+  {{/if}}
+  {{#if books}}
+  {{#each book as |book|}}
+  <li>
+    {{> book-info book}}
+  </li>
+  {{/if}}
 </ol>
