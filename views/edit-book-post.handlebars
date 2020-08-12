@@ -1,0 +1,32 @@
+<a class="back-dashboard" href="/dashboard"> &larr; Back to dashboard</a>
+<article>
+    <div class = "entire-box">
+    <div class="dashboard-text">
+    </div>
+    <form class="edit-post-form-book">
+        <div class="center-items">
+        <h2>Title:</h2>
+            <input class="post-title" name="post-title" type="text" value="{{book.book_title}}" />
+        </div>
+        <div class="center-items">
+        <h2>Cover Art URL:</h2>
+            <input class="post-title" name="post-url" type="text" value="{{book.post_url}}" />
+        <h2>Alt Title:</h2>
+            <input class="post-title" name="post-director" type="text" value="{{book.alt_title}}" />
+        <h2>Author:</h2>
+            <input class="post-title" name="post-actors" type="text" value="{{book.author}}" />
+        </div>
+        <div class="posted-date">
+           Originally posted by you on {{format_date book.created_at}}
+        </div>
+        <div class="save-delete-buttons">
+        <button type="submit">Save Movie</button>
+        <button type="button" class="delete-post-btn">Delete Movie</button>
+        </div>
+    </form>
+    </div> 
+</article>
+
+
+<script src="/javascript/edit-book-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

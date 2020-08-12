@@ -67,6 +67,11 @@
   width: 300px;
 }
 
+.selection-media {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #username-login {
   height: 50px;
   width: 250px;
@@ -230,7 +235,7 @@ h4 {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 30px 40px 40px rgba(0,0,0,0.2);
 }
 
 .title-size {
@@ -546,7 +551,20 @@ input.break {
   padding-top: 20px;
 }
 
-.new-post-form input {
+.new-post-form-movie {
+  padding-right: 200px;
+}
+
+.new-post-form-movie input {
+  width: 500px;
+  height: auto;
+}
+
+.new-post-form-book {
+  padding-right: 200px;
+}
+
+.new-post-form-book input {
   width: 500px;
   height: auto;
 }
