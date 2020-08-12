@@ -227,7 +227,7 @@ h4 {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 30px 40px 40px rgba(0,0,0,0.2);
 }
 
 .title-size {
