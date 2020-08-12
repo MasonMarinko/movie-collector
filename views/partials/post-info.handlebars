@@ -1,10 +1,10 @@
-<article class="movie">
+{{!-- <article class="movie">
  <div class="title">
   <p class="post-titles">{{title}}</p>
   <p class="date-post"> Posted by {{user.username}} on {{format_date created_at}}</p>  
   </div>
   <div class="body-main">
-  <p class="main-post">{{format_url post_url}}</p>
+    <img id="myImage" class="movie-cover main-post" >
   </div>
   {{#if director}}
     <div class="body-main">
@@ -19,4 +19,18 @@
   <div class="meta">
     <a class="comment-text" href="/movie/{{id}}">{{comments.length}} comment(s)</a>
   </div>
-</article>
+</article> --}}
+
+{{!-- <div class="movie-card"> --}}
+  <div class="card container">
+  <img src="{{post_url}}" width="300px" height="450">
+    <h4 class="title-size">Title: {{title}}</h4>
+    {{#if director}}
+    <p class="info-size"><span class="labels">Directed By: </span>{{director}}</p>
+    {{/if}}
+    {{#if actors}}
+    <p class="info-size"><span class="labels">Actors/Actresses: </span>{{actors}}</p>
+    {{/if}}
+  </div>
+    <a class="comment-text" href="/movie/{{id}}">{{comments.length}} comment(s)</a>
+{{!-- </div> --}}

@@ -1,16 +1,11 @@
-<ol class="post-list">
-  {{#if movies}}
+<h2 class="title-top dashboard-title">Latest From Media Collector Community</h2>
+<ol class="movie-max">
+  <div class="movie-wrapper">
   {{#each movies as |movie|}}
-  <li>
-    {{> post-info movie }}
+  <li class="movie-spacing">
+    {{> post-info movie }} 
+    <p> Posted by {{user.username}} on {{format_date created_at}}</p>
   </li>
   {{/each}}
-  {{/if}}
-  {{!-- {{#if books}}
-  {{#each book as |book|}}
-  <li>
-    {{> book-info book}}
-  </li>
-  {{/each}}
-  {{/if}} --}}
 </ol>
+</div>
