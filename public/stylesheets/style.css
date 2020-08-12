@@ -228,6 +228,7 @@ h4 {
 .title-size {
   padding-top: 10px;
   font-size: 25px;
+  text-decoration: underline;
 }
 
 a {
