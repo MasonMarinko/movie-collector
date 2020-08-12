@@ -18,12 +18,20 @@ Vote.init(
           key: 'id'
         }
       },
-      // do we need to add a different id for book?
       post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
           model: 'movie',
+          key: 'id'
+        }
+      },
+      // will this work for the Books, or will it cause problems? 
+      post_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'book',
           key: 'id'
         }
       }
