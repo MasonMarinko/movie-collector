@@ -29,15 +29,17 @@
 </section>
 <hr style="border: 4px solid blue;" />
 {{#if movies.length}}
-<section>
   <h2 class="title-top dashboard-title">Your Media</h2>
-  <ol>
+<section>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
     {{#each movies as |movie|}}
-    <li>
-      <a href="/dashboard/edit/{{movie.id}}" class="edit-link">Edit ({{title}})</a>
+    <li class="movie-spacing">
+      <a href="/dashboard/edit/{{movie.id}}" class="edit-link">Edit</a>
       {{> post-info movie}}
     </li>
     {{/each}}
+  </div>
   </ol>
 </section>
 {{/if}}

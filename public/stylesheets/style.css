@@ -148,6 +148,7 @@ section {
   justify-content: center;
   text-decoration: underline;
   margin-bottom: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 ol {
@@ -194,8 +195,39 @@ article {
   padding-left: 40px;
 }
 
+h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .center-items {
   width: 100%;
+}
+
+.card-container {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-bottom: 10px;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 30px 40px 0 rgba(0,0,0,0.2);
+}
+
+.title-size {
+  padding-top: 10px;
+  font-size: 25px;
 }
 
 a {
@@ -367,8 +399,17 @@ header h1 {
   margin: 0px;
 }
 
+.info-size {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
 .post-titles {
   font-size: 30px;
+}
+
+.labels {
+  font-weight: 750;
 }
 
 .btn {
@@ -396,6 +437,16 @@ header h1 {
   margin-bottom: 45px;
 }
 
+.movie-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-spacing {
+  padding-right: 50px;
+  padding-bottom: 60px;
+}
+
 .btn-no-style:hover {
   background: none;
   color: #3486eb;
@@ -411,7 +462,7 @@ header h1 {
 
 .movie {
   margin-bottom: 2%;
-  line-height: 150%;
+  line-height: 400%;
 }
 
 .post .title span {
@@ -421,10 +472,8 @@ header h1 {
 }
 
 .edit-link {
-  width: 100%;
   display: flex;
   font-size: 30px;
-  justify-content: center;
   color: #225ca3;
 }
 
@@ -459,7 +508,7 @@ input.break {
 .post-title {
   font-size: 20px;
   word-wrap: break-word;
-  height: 100px;
+  height: 50px;
   width: 630px;
 }
 

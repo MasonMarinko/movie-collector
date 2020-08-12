@@ -29,8 +29,7 @@ User.init({
     // define a username column
     username: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     // define a password column
     password: {
