@@ -1,8 +1,8 @@
 async function editFormHandler(event) {
     event.preventDefault();
 
-    const book_title = document.querySelector('input[name="post-booktitle"]').value;
-    const post_url = document.querySelector('input[name="post-bookurl"]').value;
+    const book_title = document.querySelector('input[name="post-booktitle"]').value.trim();
+    const post_url = document.querySelector('input[name="post-bookurl"]').value.trim();
     const alt_title = document.querySelector('input[name="post-alttitle"]').value.trim();
     const author = document.querySelector('input[name="post-author"]').value.trim();
 
