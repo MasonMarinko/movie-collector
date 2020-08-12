@@ -18,6 +18,7 @@ Vote.init(
           key: 'id'
         }
       },
+      // do we need to add a different id for book?
       post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

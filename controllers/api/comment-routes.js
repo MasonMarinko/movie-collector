@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, Movie } = require('../../models');
+const { Comment, Movie, Book } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
@@ -44,7 +44,8 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-         Movie.destroy({
+  // added Book to delete
+         (Movie, Book).destroy({
           where: {
             id: req.params.id
           }

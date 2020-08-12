@@ -1,0 +1,18 @@
+<article class="book">
+ <div class="title">
+  <p class="book-titles">{{book_title}}</p>
+  <p class="date-post"> Posted by {{user.username}} on {{format_date created_at}}</p>  
+  </div>
+  <div class="body-main">
+  <p class="main-post">{{format_url post_url}}</p>
+  </div>
+    <div class="body-main">
+  <p class="main-post">{{alt_title}}</p>
+  </div>
+  <div class="body-main">
+      <p class="author">{{author}}</p>
+  </div>
+  <div class="meta">
+    <a class="comment-text" href="/book/{{id}}">{{comments.length}} comment(s)</a>
+  </div>
+</article>

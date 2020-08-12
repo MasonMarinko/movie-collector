@@ -2,6 +2,7 @@ const User = require('./User');
 const Movie = require('./Movie');
 const Vote = require('./Vote');
 const Comment = require('./Comment');
+const Book = require('./Book')
 
 // create associations
 User.hasMany(Movie, {
@@ -56,5 +57,41 @@ Vote.belongsTo(User, {
     foreignKey: 'post_id'
   });
 
+  // book associations
+User.hasMany(Book, {
+    foreignKey: 'user_id'
+});
 
-module.exports = { User, Movie, Vote, Comment };
+Book.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+// User.belongsToMany(Book, {
+//     through: Vote,
+//     as: 'voted_posts',
+//     foreignKey: 'user_id'
+//   });
+  
+  // Book.belongsToMany(User, {
+  //   through: Vote,
+  //   as: 'voted_posts',
+  //   foreignKey: 'post_id'
+  // });
+  
+Vote.belongsTo(Book, {
+    foreignKey: 'post_id'
+  });
+  
+  Book.hasMany(Vote, {
+    foreignKey: 'post_id'
+  });
+
+  Comment.belongsTo(Book, {
+    foreignKey: 'post_id'
+  });
+  
+  Book.hasMany(Comment, {
+    foreignKey: 'post_id'
+  });
+
+module.exports = { User, Movie, Vote, Comment, Book };
