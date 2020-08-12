@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Movie, Vote } = require('../../models');
+const { User, Movie, Vote, Book } = require('../../models');
 // const User = require('../../models/User');
 const withAuth = require('../../utils/auth')
 
@@ -29,6 +29,18 @@ router.get('/:id', (req, res) => {
           attributes: ['title'],
           through: Vote,
           as: 'voted_posts'
+        },
+        // do I need to add the book model here?
+        {
+          model: Book, 
+          attributes: ['id', 'book_title', 'alt_title', 'post_url', 'created_at']
+        },
+        {
+          model: Book, 
+          attributes: ['book_title'], 
+          // through: Vote, 
+          // as: 'voted_posts'
+          // the above 2 lines of code create a sequelized error message. 
         }
       ]
     })

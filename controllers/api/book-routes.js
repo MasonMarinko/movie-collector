@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 'alt_title',
                 'author',
                 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+                // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
             ],
             include: [
                 // include the Comment model here:
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
                 'alt_title',
                 'author',
                 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+                // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
 
             ],
             include: [
@@ -94,12 +94,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+    // expects {title: 'Harry Potter', post_url: 'https://harry potter.com', 'Book 4', 'J.K. Rowling', user_id: 1}
     Book.create({
-            title: req.body.title,
+            book_title: req.body.book_title,
             post_url: req.body.post_url,
-            director: req.body.director,
-            actors: req.body.actors,
+            alt_title: req.body.alt_title,
+            author: req.body.author,
             user_id: req.session.user_id
         })
         .then(dbPostData => res.json(dbPostData))
@@ -124,10 +124,11 @@ router.put('/upvote', (req, res) => {
 
 router.put('/:id', (req, res) => {
     Book.update({
-            title: req.body.title,
+            book_title: req.body.book_title,
             post_url: req.body.post_url,
-            director: req.body.director,
-            actors: req.body.actors,
+            alt_title: req.body.alt_title,
+            author: req.body.author,
+            user_id: req.session.user_id
         }, {
             where: {
                 id: req.params.id
