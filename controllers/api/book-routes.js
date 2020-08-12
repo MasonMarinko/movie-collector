@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 'alt_title',
                 'author',
                 'created_at',
-                // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
             ],
             include: [
                 // include the Comment model here:
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
                 'alt_title',
                 'author',
                 'created_at',
-                // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
 
             ],
             include: [
@@ -127,8 +127,7 @@ router.put('/:id', (req, res) => {
             book_title: req.body.book_title,
             post_url: req.body.post_url,
             alt_title: req.body.alt_title,
-            author: req.body.author,
-            user_id: req.session.user_id
+            author: req.body.author
         }, {
             where: {
                 id: req.params.id
