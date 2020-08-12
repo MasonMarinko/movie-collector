@@ -4,6 +4,8 @@ const { Movie, User, Comment, Book } = require('../models');
 const withAuth = require('../utils/auth')
 
 router.get('/', (req, res) => {
+  let movies;
+  let books;
     Movie.findAll({
       where: {
         // use the ID from the session
@@ -35,7 +37,7 @@ router.get('/', (req, res) => {
     })
     .then(dbPostMovieData => {
       // serialize data before passing to template
-      const movies = dbPostMovieData.map(post => post.get({ plain: true }));
+      movies = dbPostMovieData.map(post => post.get({ plain: true }));
     })
     Book.findAll({
       where: {
@@ -68,8 +70,8 @@ router.get('/', (req, res) => {
     })
       .then(dbPostBooksData => {
         // serialize data before passing to template
-        const books = dbPostBooksData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { books, loggedIn: true });
+        books = dbPostBooksData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { books, movies, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -117,19 +119,6 @@ router.get('/', (req, res) => {
             });
         });
 });
-
-// router.get('/', (req, res) => {
-  
-//     .then(dbPostData => {
-//       // serialize data before passing to template
-//       const books = dbPostData.map(post => post.get({ plain: true }));
-//       res.render('dashboard', { books, loggedIn: true });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
 
 router.get('/edit/:id', (req, res) => {
   Book.findOne({
