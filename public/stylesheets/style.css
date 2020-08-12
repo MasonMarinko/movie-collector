@@ -56,14 +56,21 @@
   width: 200px;
 }
 
+.title-login {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
 .usernamepw {
+  display: flex;
+  justify-content: center;
   width: 300px;
 }
 
 #username-login {
   height: 50px;
   width: 250px;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 #username-signup {
@@ -75,7 +82,7 @@
 #password-login {
   height: 50px;
   width: 250px;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 #password-signup {
@@ -97,14 +104,14 @@
 }
 
 #login {
-  width: 100px;
+  width: 250px;
   height: 50px;
   font-size: 20px;
 }
 
 .orKey {
   width: 100%;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 #signup-2 {
@@ -122,7 +129,8 @@
 .login-form {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
   padding-bottom: 50px;
 }
 
@@ -172,7 +180,7 @@ body, html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   color: #333;
 }
 
@@ -345,7 +353,7 @@ button:hover {
 textarea, input {
   padding: .5%;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
 }
 
 textarea:focus, input:focus {
