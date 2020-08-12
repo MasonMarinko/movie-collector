@@ -7,6 +7,7 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const rater = require('rater-js');
 
 const sess = {
     secret: 'Super secret secret',
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
 app.use(routes);
+// app.use(rater);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
