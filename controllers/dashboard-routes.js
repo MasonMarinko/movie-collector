@@ -33,10 +33,43 @@ router.get('/', (req, res) => {
         }
       ]
     })
-      .then(dbPostData => {
+    .then(dbPostMovieData => {
+      // serialize data before passing to template
+      const movies = dbPostMovieData.map(post => post.get({ plain: true }));
+    })
+    Book.findAll({
+      where: {
+        // use the ID from the session
+        user_id: req.session.user_id
+      },
+      attributes: [
+        'id',
+        'post_url',
+        'book_title',
+        'alt_title',
+        'author',
+        'created_at',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    })
+      .then(dbPostBooksData => {
         // serialize data before passing to template
-        const movies = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { movies, loggedIn: true });
+        const books = dbPostBooksData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { books, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -44,6 +77,8 @@ router.get('/', (req, res) => {
       });
   });
 
+
+  
   router.get('/edit/:id', (req, res) => {
     Movie.findOne({
         where: {
@@ -83,46 +118,18 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/', (req, res) => {
-  Book.findAll({
-    where: {
-      // use the ID from the session
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'id',
-      'post_url',
-      'book_title',
-      'alt_title',
-      'author',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      // serialize data before passing to template
-      const books = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { books, loggedIn: true });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.get('/', (req, res) => {
+  
+//     .then(dbPostData => {
+//       // serialize data before passing to template
+//       const books = dbPostData.map(post => post.get({ plain: true }));
+//       res.render('dashboard', { books, loggedIn: true });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 router.get('/edit/:id', (req, res) => {
   Book.findOne({
