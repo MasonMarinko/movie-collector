@@ -79,9 +79,7 @@ router.get('/', (req, res) => {
       });
   });
 
-
-  
-  router.get('/edit/:id', (req, res) => {
+  router.get('/edit/movies/:id', (req, res) => {
     Movie.findOne({
         where: {
             id: req.params.id
@@ -120,7 +118,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/books/:id', (req, res) => {
   Book.findOne({
       where: {
           id: req.params.id
@@ -152,7 +150,7 @@ router.get('/edit/:id', (req, res) => {
       .then(dbPostData => {
           const book = dbPostData.get({ plain: true });
 
-          res.render('edit-post', {
+          res.render('edit-book-post', {
               book,
               loggedIn: true
           });
