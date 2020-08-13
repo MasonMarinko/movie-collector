@@ -2,7 +2,7 @@
   <ol class="movie-max">
     <div class="movie-wrapper">
     <li class="movie-spacing">
-      {{> book-info book}}
+      {{> book-info books}}
     </li>
   </div>
   </ol>
@@ -10,14 +10,14 @@
 {{#if loggedIn}}
 <form class="book-comment-form comment-form">
   <div>
-    <textarea id="book-comment-body comment-body" name="book-comment-body"></textarea>
+    <textarea id="comment-body" name="book-comment-body"></textarea>
   </div>
   <div class="add-comment">
     <button id="add-comment-button" type="submit" onclick='goBack()'>add comment</button>
   </div>
 {{/if}}
 
-{{> comments book.comments}}
+{{> comments books.comments}}
 </form>
 {{#if loggedIn}}
 <script src="/javascript/book-comment.js"></script>
