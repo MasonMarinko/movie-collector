@@ -103,13 +103,11 @@ html, body {
     font-size: 20px;
   }
 
-.text {
-  color: black;
-  padding-top: 10px;
-  text-decoration: none;
-  width: 650px;
-  font-size: 40px;
-}
+  .video {
+    display: flex;
+    justify-content: center;
+  }
+  
   .text--small {
     opacity: 0.85;
     font-size: 0.75rem;
@@ -632,6 +630,23 @@ input.break {
   height: 80px;
 }
 
+
+.text {
+  color: black;
+  padding-top: 10px;
+  text-decoration: none;
+  width: 650px;
+  font-size: 40px;
+}
+
+.tool-tip {
+  color: #225ca3;
+}
+
+.click-me {
+  
+}
+
 .media-wrapper {
   display: flex;
 }
@@ -665,6 +680,12 @@ input.break {
 
 .back-dashboard {
   color: #225ca3;
+}
+
+.comment:nth-child(even) {
+  background-color: #fff;
+  align-items: center;
+  width: 1200px;
 }
 
 .comment:nth-child(odd) {
