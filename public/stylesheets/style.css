@@ -640,6 +640,10 @@ input.break {
   font-size: 40px;
 }
 
+.text:hover {
+  color: #225ca3;
+}
+
 .tool-tip {
   color: #225ca3;
 }
