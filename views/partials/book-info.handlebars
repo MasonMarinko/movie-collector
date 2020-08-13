@@ -3,22 +3,22 @@
     <img src="{{post_url}}" width="300px" height="450">
   {{/if}}
   {{#if book_title}}
-      <h4 class="title-size">Book Title: {{book_title}}</h4>
+      <h4 class="title-size">Book Title: <span class="bold-title">{{book_title}}</span></h4>
   {{/if}}
   {{#if alt_title}}
-    <h4 class="title-size">Book Alt Title: {{alt_title}}</h4>
+    <h4 class="title-size">Book Alt Title: <span class="bold-title">{{alt_title}}</span></h4>
   {{/if}}
-  {{#if title}}
+  {{!-- {{#if title}}
     <h4 class="title-size">Title: {{title}}</h4>
-    {{/if}}
-    {{#if director}}
+    {{/if}} --}}
+    {{!-- {{#if director}}
     <p class="info-size"><span class="labels">Directed By: </span>{{director}}</p>
-    {{/if}}
+    {{/if}} --}}
     {{#if author}}
         <p class="info-size"><span class="labels">Author: </span>{{author}}</p>
     {{/if}}
-    {{#if actors}}
+    {{!-- {{#if actors}}
     <p class="info-size"><span class="labels">Actors/Actresses: </span>{{actors}}</p>
-    {{/if}}
+    {{/if}} --}}
   </div>
-    <a class="comment-text" href="/movie/{{id}}">{{comments.length}} comment(s)</a>
+    <a class="comment-text" href="/book/{{id}}">{{comments.length}} comment(s)</a>

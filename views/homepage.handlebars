@@ -1,15 +1,4 @@
-<h2 class="title-top dashboard-title">Latest From Media Collector Community</h2>
-{{!-- <ol class="movie-max">
-  <div class="movie-wrapper">
-  {{#each movies as |movie|}}
-  <li class="movie-spacing">
-    {{> post-info movie }} 
-    <p> Posted by {{user.username}} on {{format_date created_at}}</p>
-  </li>
-  {{/each}}
-</ol>
-</div> --}}
-
+<h2 class="title-top dashboard-title">Latest Community Movies</h2>
 {{#if movies.length}}
 <section>
   <ol class="movie-max">
@@ -26,6 +15,7 @@
 </section>
 {{/if}}
 
+<h2 class="title-top dashboard-title">Latest Community Books</h2>
 {{#if books.length}}
 <section>
   <ol class="movie-max">

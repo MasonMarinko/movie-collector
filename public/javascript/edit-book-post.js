@@ -29,7 +29,6 @@ async function editFormHandler(event) {
     } else {
         alert(response.statusText);
     };
-
 }
 
 document.querySelector('.edit-post-form-book').addEventListener('submit', editFormHandler);
