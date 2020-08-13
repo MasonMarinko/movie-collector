@@ -2,23 +2,23 @@
   <ol class="movie-max">
     <div class="movie-wrapper">
     <li class="movie-spacing">
-      {{> post-info movie}}
+      {{> book-info books}}
     </li>
   </div>
   </ol>
 </section>
 {{#if loggedIn}}
-<form class="movie-comment-form comment-form">
+<form class="book-comment-form comment-form">
   <div>
-    <textarea id="comment-body" name="movie-comment-body"></textarea>
+    <textarea id="comment-body" name="book-comment-body"></textarea>
   </div>
   <div class="add-comment">
     <button id="add-comment-button" type="submit" onclick='goBack()'>add comment</button>
   </div>
 {{/if}}
 
-{{> comments movie.comments}}
+{{> comments books.comments}}
 </form>
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/book-comment.js"></script>
 {{/if}}

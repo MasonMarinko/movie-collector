@@ -1,8 +1,8 @@
 async function newMovieFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
-    const post_url = document.querySelector('input[name="post-url"]').value;
+    const title = document.querySelector('input[name="post-title"]').value.trim();
+    const post_url = document.querySelector('input[name="post-url"]').value.trim();
     const director = document.querySelector('input[name="post-director"]').value.trim();
     const actors = document.querySelector('input[name="post-actors"]').value.trim();
   

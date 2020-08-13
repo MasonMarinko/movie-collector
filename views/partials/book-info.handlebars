@@ -8,17 +8,8 @@
   {{#if alt_title}}
     <h4 class="title-size">Book Alt Title: <span class="bold-title">{{alt_title}}</span></h4>
   {{/if}}
-  {{!-- {{#if title}}
-    <h4 class="title-size">Title: {{title}}</h4>
-    {{/if}} --}}
-    {{!-- {{#if director}}
-    <p class="info-size"><span class="labels">Directed By: </span>{{director}}</p>
-    {{/if}} --}}
     {{#if author}}
         <p class="info-size"><span class="labels">Author: </span>{{author}}</p>
     {{/if}}
-    {{!-- {{#if actors}}
-    <p class="info-size"><span class="labels">Actors/Actresses: </span>{{actors}}</p>
-    {{/if}} --}}
   </div>
-    <a class="comment-text" href="/book/{{id}}">{{comments.length}} comment(s)</a>
+    <a class="comment-text" href="/books/{{id}}">{{comments.length}} comment(s)</a>

@@ -1,5 +1,4 @@
 async function editFormHandler(event) {
-    event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const post_url = document.querySelector('input[name="post-url"]').value.trim();
