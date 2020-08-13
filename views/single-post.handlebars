@@ -1,16 +1,24 @@
-    {{> post-info movie }}
+<section>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
+    <li class="movie-spacing">
+      {{> post-info movie}}
+    </li>
+  </div>
+  </ol>
+</section>
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea id="comment-body" name="comment-body"></textarea>
   </div>
   <div class="add-comment">
-    <button type="submit" onclick='goBack()'>add comment</button>
+    <button id="add-comment-button" type="submit" onclick='goBack()'>add comment</button>
   </div>
-</form>
 {{/if}}
 
 {{> comments movie.comments}}
+</form>
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>

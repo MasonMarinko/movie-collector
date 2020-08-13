@@ -1,11 +1,10 @@
-<h2 class="title-top dashboard-title">Latest Community Movies</h2>
 {{#if movies.length}}
+<h2 class="title-top dashboard-title">Latest Community Movies</h2>
 <section>
   <ol class="movie-max">
     <div class="movie-wrapper">
     {{#each movies as |movie|}}
     <li class="movie-spacing">
-      <a href="/dashboard/edit/{{movie.id}}" class="edit-link">Edit</a>
       {{> post-info movie}}
       <p> Posted by {{user.username}} on {{format_date created_at}}</p>
     </li>
@@ -15,14 +14,13 @@
 </section>
 {{/if}}
 
-<h2 class="title-top dashboard-title">Latest Community Books</h2>
 {{#if books.length}}
+<h2 class="title-top dashboard-title">Latest Community Books</h2>
 <section>
   <ol class="movie-max">
     <div class="movie-wrapper">
     {{#each books as |book|}}
     <li class="movie-spacing">
-      <a href="/dashboard/edit/{{books.id}}" class="edit-link">Edit</a>
       {{> book-info book}}
       <p> Posted by {{user.username}} on {{format_date created_at}}</p>
     </li>
