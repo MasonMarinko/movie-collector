@@ -2,11 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Movie, User, Comment, Book }= require('../models');
 
-// res.render('homepage', { 
-//   movies,
-// loggedIn: req.session.loggedIn
-// });
-
 
 router.get('/', (req, res) => {
   let movies;
@@ -39,10 +34,6 @@ router.get('/', (req, res) => {
         movies = dbPostData.map(post => post.get({ plain: true }));
       })
       Book.findAll({
-        where: {
-          // use the ID from the session
-          user_id: req.session.user_id
-        },
         attributes: [
           'id',
           'post_url',

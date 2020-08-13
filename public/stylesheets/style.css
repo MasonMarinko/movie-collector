@@ -230,7 +230,7 @@ h4 {
   transition: 0.3s;
   margin-bottom: 10px;
   max-width: 300px;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -241,7 +241,7 @@ h4 {
 .title-size {
   padding-top: 10px;
   font-size: 25px;
-  text-decoration: underline;
+  padding-bottom: 10px;
 }
 
 a {
@@ -370,6 +370,10 @@ textarea {
   min-width: 40%;
   min-height: 100px;
   font-size: 20px;
+}
+
+.bold-title {
+  font-weight: 100;
 }
 
 form > div {
