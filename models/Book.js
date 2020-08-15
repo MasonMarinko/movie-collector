@@ -54,7 +54,8 @@ Book.init(
         },
         author: {
             type: DataTypes.STRING,
-            allowNull: false
+            //added this to allow the author to be blank upon submission
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,

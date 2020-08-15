@@ -1,18 +1,19 @@
-async function commentFormHandler(event) {
+// added book to bookCommentFormHandler
+async function bookCommentFormHandler(event) {
     event.preventDefault();
-  
-    const comment_text = document.querySelector('textarea[name="book-comment-body"]').value.trim();
+    // added book to book_comment_text and to book-comment-body
+    const book_comment_text = document.querySelector('textarea[name="book-comment-body"]').value.trim();
   
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-  
-    if (comment_text) {
+    // added book_ to comment text
+    if (book_comment_text) {
         const response = await fetch('/api/book/comments', {
           method: 'POST',
           body: JSON.stringify({
             post_id,
-            comment_text
+            book_comment_text
           }),
           headers: {
             'Content-Type': 'application/json'
@@ -26,5 +27,5 @@ async function commentFormHandler(event) {
         }
       }
   }
-  
-  document.querySelector('.book-comment-form').addEventListener('submit', commentFormHandler);
+  // added book to comment-form and to commentFormHandler
+  document.querySelector('.book-comment-form').addEventListener('submit', bookCommentFormHandler);

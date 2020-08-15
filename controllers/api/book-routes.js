@@ -4,7 +4,8 @@ const {
     Book,
     User,
     Vote,
-    Comment
+    // added BookComment here
+    BookComment,
 } = require('../../models');
 const withAuth = require('../../utils/auth')
 
@@ -27,8 +28,10 @@ router.get('/', (req, res) => {
             include: [
                 // include the Comment model here:
                 {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    // changed the model to BookComment
+                    model: BookComment,
+                    // added book to comment_text in the attributes. 
+                    attributes: ['id', 'book_comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -65,8 +68,10 @@ router.get('/:id', (req, res) => {
             include: [
                 // include the Comment model here:
                 {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    //added added Book to Comment model
+                    model: BookComment,
+                    // added book to comment_text below.
+                    attributes: ['id', 'book_comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -113,7 +118,8 @@ router.put('/upvote', (req, res) => {
     // make sure the session exists first
     if (req.session) {
       // pass session id along with all destructured properties on req.body
-      Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+                                                                // added Book to Comment below
+      Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, BookComment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
         .catch(err => {
           console.log(err);

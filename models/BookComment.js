@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+//added Book to Comment to make BookComment through out this model
 class BookComment extends Model {}
-
+// added Book
 BookComment.init(
   {
     id: {
@@ -10,7 +10,8 @@ BookComment.init(
         primaryKey: true,
         autoIncrement: true
       },
-      comment_text: {
+      // added book to comment_text
+      book_comment_text: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
@@ -29,7 +30,7 @@ BookComment.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'movie',
+          model: 'book',
           key: 'id'
   }
 }
@@ -38,8 +39,9 @@ BookComment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
+    //added book to comment for modelName.
     modelName: 'bookcomment'
   }
 );
-
+// added Book to Comment for module.exports. 
 module.exports = BookComment;

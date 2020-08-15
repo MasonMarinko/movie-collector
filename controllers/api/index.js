@@ -8,7 +8,8 @@ const bookCommentRoutes=require('./book-comment-routes')
 router.use('/users', userRoutes);
 router.use('/movies', postRoutes);
 router.use('/movie/comments', commentRoutes);
-router.use('/book/bookcomments', bookCommentRoutes)
+//updated bookCommentRoutes path to '/book/comments'
+router.use('/book/comments', bookCommentRoutes)
 router.use('/books', bookRoutes);
 
 module.exports = router;
