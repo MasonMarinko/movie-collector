@@ -45,7 +45,7 @@ For USE
 ## Usage/Features (After Installation)
 DEMO:
 
-![demo](https://youtu.be/R0ZZsHECZQ0)
+[![demo](https://img.youtube.com/vi/R0ZZsHECZQ0&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=R0ZZsHECZQ0&feature=youtu.be)
 
 Login Page:
 
@@ -53,7 +53,7 @@ Login Page:
 
 For help in adding books and movies this video can help!
 
-![covers](https://youtu.be/9YB0--9IDyU)
+[![covers](https://img.youtube.com/vi/9YB0--9IDyU&feature=youtu.be)](https://www.youtube.com/watch?v=9YB0--9IDyU&feature=youtu.be)
 
 ## License
 This project is covered under the following license(s):
