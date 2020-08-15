@@ -191,6 +191,7 @@ html, body {
 .selection-media {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 #username-login {
@@ -517,9 +518,13 @@ form label {
   flex-direction: column;
 }
 
+.hello-name {
+  font-size: 30px;
+}
+
 nav {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 1%;
 }
@@ -582,6 +587,7 @@ header h1 {
 .movie-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie-spacing {
@@ -656,10 +662,6 @@ input.break {
   color: #225ca3;
 }
 
-.click-me {
-  
-}
-
 .media-wrapper {
   display: flex;
 }
@@ -713,10 +715,6 @@ input.break {
   padding-top: 30px;
 }
 
-.new-post-form-movie {
-  padding-right: 200px;
-}
-
 .new-post-form-movie input {
   width: 500px;
   height: auto;
@@ -740,4 +738,46 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 30px;
+}
+
+@media screen and (max-width: 980px) {
+
+  .title-top {
+    display: flex;
+    padding-bottom: 20px;
+    height: 60px;
+    font-size: 100px;
+    color: #fff;
+    font-weight: bold;
+    transition: color .1s;
+    justify-content: center;
+  }
+
+  .headline {
+    height: 300px
+  }
+
+  .dashboard-title {
+    display: flex;
+    padding-bottom: 20px;
+    height: 60px;
+    font-size: 55px;
+    color: #225ca3;
+    font-weight: bold;
+    transition: color .1s;
+    justify-content: center;
+  }
+
+.movie-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    justify-content: center;
+}
+
+.movie-spacing {
+  padding-right: 10px;
+  padding-bottom: 60px;
+}
+
 }
