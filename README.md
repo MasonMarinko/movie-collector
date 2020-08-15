@@ -47,10 +47,6 @@ DEMO:
 
 [![Media Collector Demo](https://img.youtube.com/vi/R0ZZsHECZQ0/0.jpg)](https://www.youtube.com/watch?v=R0ZZsHECZQ0 "Media Collector Demo")
 
-Login Page:
-
-![image](./assets/login.jpg)
-
 For help in adding books and movies this video can help!
 
 [![Add Covers for Media Collector](https://img.youtube.com/vi/9YB0--9IDyU/0.jpg)](https://www.youtube.com/watch?v=9YB0--9IDyU "Add Covers for Media Collector")
