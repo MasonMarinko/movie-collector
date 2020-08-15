@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Movie, User, Comment, Book }= require('../models');
+const { Movie, User, Comment, Book, BookComment }= require('../models');
 
 
 router.get('/', (req, res) => {
@@ -45,8 +45,9 @@ router.get('/', (req, res) => {
         ],
         include: [
           {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            // added Book to Comment for BookComment
+            model: BookComment, // added book to comment_text
+            attributes: ['id', 'book_comment_text', 'post_id', 'user_id', 'created_at'],
             include: {
               model: User,
               attributes: ['username']
@@ -155,8 +156,9 @@ router.get('/', (req, res) => {
       ],
       include: [
         {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          // added Book to Comment
+          model: BookComment, // added book
+          attributes: ['id', 'book_comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
