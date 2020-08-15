@@ -82,6 +82,7 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   border: 1px solid #333;
+  margin: 12px;
 }
   .input:focus {
     outline: none;
@@ -201,7 +202,8 @@ html, body {
 #username-signup {
   height: 60px;
   width: 500px;
-  font-size: 17px;
+  font-size: 20px;
+  margin: 12px;
 }
 
 #password-login {
@@ -268,6 +270,12 @@ section {
   font-size: 100px;
   width: 100%;
   text-align: center;
+}
+
+.login-page-img {
+  background: 
+    url(https://lh3.googleusercontent.com/proxy/n9a0T6EqtJs6zbEci6ytsxtpz303kLhARLT_mAlDhpR_5OqqG4Ux2OnQDdlWkYa-lR2nFFrJTJL5EMXcm8OHad_vak4rYNQbYhTzfIqBOt80anKm3UuKSxcZaPIzLgN4bbX4iVgxIlTpG_81xcNkQvOylhx4UiyTLOqjYn8BV7cLkK8N6zJnBXm3KFhuWR6zwwdQamNKPvcHe5JdqsB6ZPbVXoAmSZaC)no-repeat center;
+  background-size: cover;
 }
 
 .dashboard-title {
