@@ -45,7 +45,7 @@ For USE
 ## Usage/Features (After Installation)
 DEMO:
 
-![demo](https://www.youtube.com/watch?v=R0ZZsHECZQ0&feature=youtu.be)
+[![Media Collector Demo](https://img.youtube.com/vi/R0ZZsHECZQ0/0.jpg)](https://www.youtube.com/watch?v=R0ZZsHECZQ0 "Media Collector Demo")
 
 Login Page:
 
@@ -53,7 +53,7 @@ Login Page:
 
 For help in adding books and movies this video can help!
 
-![covers](https://www.youtube.com/watch?v=9YB0--9IDyU&feature=youtu.be)
+[![Add Covers for Media Collector](https://img.youtube.com/vi/9YB0--9IDyU/0.jpg)](https://www.youtube.com/watch?v=9YB0--9IDyU "Add Covers for Media Collector")
 
 ## License
 This project is covered under the following license(s):
