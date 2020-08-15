@@ -270,6 +270,12 @@ section {
   text-align: center;
 }
 
+.login-page-img {
+  background: 
+    url(https://lh3.googleusercontent.com/proxy/n9a0T6EqtJs6zbEci6ytsxtpz303kLhARLT_mAlDhpR_5OqqG4Ux2OnQDdlWkYa-lR2nFFrJTJL5EMXcm8OHad_vak4rYNQbYhTzfIqBOt80anKm3UuKSxcZaPIzLgN4bbX4iVgxIlTpG_81xcNkQvOylhx4UiyTLOqjYn8BV7cLkK8N6zJnBXm3KFhuWR6zwwdQamNKPvcHe5JdqsB6ZPbVXoAmSZaC)no-repeat center;
+  background-size: cover;
+}
+
 .dashboard-title {
   display: flex;
   width: 100%;
