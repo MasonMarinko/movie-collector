@@ -29,4 +29,3 @@ async function signupPageHandler(event) {
 
   
 document.querySelector('#login').addEventListener('click', loginFormHandler);
-document.querySelector('#signup').addEventListener('click', signupPageHandler);

@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-
 @import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
 
 * {
@@ -14,7 +13,7 @@ body {
         font-family: Signika, -apple-system, sans-serif;
 }
 
-section {
+.signup-section {
     margin: 0em auto 0;
     width: 100%;
     max-width: 800px;
@@ -46,7 +45,7 @@ meter {
             appearance: none;
             
     margin: 0 auto 1em;
-    width: 100%;
+    width: 775px;
     height: .5em;
     
     /* Applicable only to Firefox */
@@ -71,10 +70,16 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 
 .feedback {
     color: #9ab;
-    font-size: 90%;
+    font-size: 30px;
     padding: 0 .25em;
     font-family: Courgette, cursive;
     margin-top: 1em;
+}
+
+#password-strength-text {
+  font-size: 20px;
+  width: 775px;
+  padding-bottom: 50px;
 }
 
 :root {
@@ -279,9 +284,19 @@ html, body {
 
 #username-signup {
   height: 60px;
-  width: 500px;
+  width: 775px;
   font-size: 20px;
   margin: 12px;
+  background-color: rgba(255,255,255,.9);
+}
+
+#password {
+  height: 60px;
+  width: 775px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
+  border: 1px solid #333;
 }
 
 #password-login {
@@ -855,6 +870,29 @@ footer {
 .movie-spacing {
   padding-right: 10px;
   padding-bottom: 60px;
+}
+
+#password {
+    height: 60px;
+    width: 640px;
+    font-size: 20px;
+    margin: 12px;
+    background-color: rgba(255,255,255,.9);
+    border: 1px solid #333;
+}
+
+#password-strength-text {
+    font-size: 20px;
+    width: 640px;
+    padding-bottom: 50px;
+}
+
+#username-signup {
+  height: 60px;
+  width: 640px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
 }
 
 }

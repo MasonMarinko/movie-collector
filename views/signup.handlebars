@@ -1,23 +1,15 @@
-{{!--   
-  <form class="signup-form form form--signup framed">
-  <section>
-        <label for="password">Enter password</label>
-        <input autocomplete="new-password" type="password" name="password" id="password">
-    
-        <meter max="4" id="password-strength-meter"></meter>
-        <p id="password-strength-text"></p>
-</section>
-  </form> --}}
-  
-  
-  
-  <form class="signup-form form form--signup framed">
-    <input id= "username-signup" type="text" placeholder="Username" class="input" />
-    <input id="password-signup"type="password" placeholder="Password" class="input" />
+<form class="signup-form form form--signup framed">
+  <input autocomplete="username" id="username-signup" type="text" placeholder="Username" class="input" />
+  <section class="signup-section">
+    <input placeholder="Password" autocomplete="new-password" type="password" name="password" id="password">
+    <meter max="4" id="password-strength-meter"></meter>
+    <p id="password-strength-text"></p>
     <input type="submit" value="Sign up" class="input input--submit" />
-  
-    <label onclick="window.location.href='/login';" for="toggle--login" class="text text--small text--centered">Not new? <b>Log in</b></label>
-  </form>
+
+    <label onclick="window.location.href='/login';" for="toggle--login" class="text text--small text--centered">Not new?
+      <b>Log in</b></label>
+  </section>
+</form>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 <script src="/javascript/pwstrength.js"></script>
