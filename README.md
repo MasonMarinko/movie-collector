@@ -1,5 +1,5 @@
 # Media Collector ![ISC Badge](https://img.shields.io/badge/License-ISC-brightgreen)
-Website homepage, test
+Website homepage
 
 ![image](./assets/homepage.jpg)
 
