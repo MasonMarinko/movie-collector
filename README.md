@@ -1,5 +1,5 @@
 # Media Collector ![ISC Badge](https://img.shields.io/badge/License-ISC-brightgreen)
-Website homepage, 
+Website homepage
 
 ![image](./assets/homepage.jpg)
 
@@ -83,8 +83,4 @@ GitHub Profiles:
 
 
 Questions? Contact Us:
-<<<<<<< HEAD
 <Mason.P.Marinko@gmail.com>, <plthrock@gmail.com>, & <matt.mcfadden14@gmail.com>
-=======
-<Mason.P.Marinko@gmail.com>, <plthrock@gmail.com>, & <matt.mcfadden14@gmail.com>
->>>>>>> 41d6e56f142364bbece5617e06853eac8b0b8fc3
