@@ -1,4 +1,4 @@
-# (/assets/media-collector-logo.png) ![ISC Badge](https://img.shields.io/badge/License-ISC-brightgreen)
+# Media-Collector ![ISC Badge](https://img.shields.io/badge/License-ISC-brightgreen)
 
 ## Links
 
