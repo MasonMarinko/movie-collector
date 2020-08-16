@@ -61,6 +61,8 @@ Live URL Link: [Media Collector Website](https://media-collector-project.herokua
 
 6) When looking at other user's movies on the homepage you can also comment. This will allow you to communicate with other members of the Media Collector community about likes, dislikes and just plain conversation. The post will show who posted it, once its commented on the movie or book will update and show how many comments are attached.
 
+Note: The technology we used which we hadn't learned before was the password strength indicator. It can be found in the style.css, signup.handlebars and pwstrength.js.
+
 
 ## License
 This project is covered under the following license(s):
