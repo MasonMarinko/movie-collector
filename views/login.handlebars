@@ -3,9 +3,10 @@
   <input type="radio" id="toggle--signup" name="toggle" class="ghost" />
 
   <form class="login-form form form--login framed">
-    <input id="username-login"autocomplete="username" type="text" placeholder="Username" class="input input--top" />
-    <input id="password-login" autocomplete="current-password" type="password" placeholder="Password" class="input" />
-    <input id="login" type="submit" value="Log in" class="input input--submit" />
+  <input autocomplete="" id="username-login" type="text" placeholder="Username" class="input" />
+  <section class="signup-section">
+    <input placeholder="Password" autocomplete="new-password" type="password" name="password" id="password">
+    <input id="login" type="submit" value="Login" class="input input--submit" />
     
     <label onclick="window.location.href='/signup';" type="click" for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
   </form>
