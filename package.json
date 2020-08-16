@@ -19,6 +19,7 @@
     "msg-modal": "^11.4.8",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
+    "react-social-login-buttons": "^3.1.0",
     "sequelize": "^6.3.4"
   },
   "devDependencies": {
