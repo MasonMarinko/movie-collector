@@ -1,14 +1,14 @@
 <div class="comments">
-  {{#each this}}
+  {{#each comments}}
   <section class="comment">
 <div class="meta">
   <div class="posted_by">
   {{user.username}} commented: 
   </div>
-  <a href="/book/{{id}}">{{comments.length}}</a>
+  <a href="/book/{{id}}">{{bookcomments.length}}</a>
 </div>
     <div class="text">
-      {{comment_text}}
+      {{bookcomments.comment_text}}
     </div>
   </section>
   {{/each}}

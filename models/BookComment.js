@@ -29,7 +29,7 @@ BookComment.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'movie',
+          model: 'book',
           key: 'id'
   }
 }

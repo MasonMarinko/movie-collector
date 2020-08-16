@@ -3,7 +3,7 @@ const { Comment, Movie, Book } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
-    Comment.findAll({
+    Comment.findAll({      
         attributes: [
             'id', 
             'comment_text', 

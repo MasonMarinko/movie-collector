@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BookComment, Comment, Movie, Book } = require('../../models');
+const { BookComment, User, Comment, Movie, Book } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             'comment_text', 
             'user_id', 
             'post_id',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
         ],
         order: [[ 'created_at', 'DESC']],
         include: [
@@ -26,7 +26,35 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  console.log(req.params.id)
+  BookComment.findAll({
+    where: {
+      id: req.params.id
+  },
+    attributes: [
+          'id', 
+          'comment_text', 
+          'user_id', 
+          'post_id'
+          // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+      ],
+      order: [[ 'created_at', 'DESC']],
+      include: [
+          {
+              model: Book,
+              attributes: ['book_id']
+          }
+      ]
+  })
+  .then(dbPostData => res.json(dbPostData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
 router.post('/', (req, res) => {
+  console.log(req.body)
   // check the session
   if (req.session) {
     BookComment.create({

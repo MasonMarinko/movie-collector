@@ -4,7 +4,7 @@ const {
     Book,
     User,
     Vote,
-    Comment
+    BookComment
 } = require('../../models');
 const withAuth = require('../../utils/auth')
 
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
             include: [
                 // include the Comment model here:
                 {
-                    model: Comment,
+                    model: BookComment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
@@ -48,6 +48,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+    console.log(req.params.id)
     Book.findOne({
             where: {
                 id: req.params.id
@@ -65,12 +66,12 @@ router.get('/:id', (req, res) => {
             include: [
                 // include the Comment model here:
                 {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: BookComment,
+                    attributes: [ 'comment_text', 'post_id'],
+                    // include: {
+                    //     model: User,
+                    //     attributes: ['username']
+                    // }
                 },
                 {
                     model: User,
@@ -113,7 +114,7 @@ router.put('/upvote', (req, res) => {
     // make sure the session exists first
     if (req.session) {
       // pass session id along with all destructured properties on req.body
-      Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+      Book.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, BookComment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
         .catch(err => {
           console.log(err);
