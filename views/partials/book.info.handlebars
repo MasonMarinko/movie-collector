@@ -1,0 +1,15 @@
+  <div class="card container">
+  {{#if post_url}}
+    <img src="{{post_url}}" width="300px" height="450">
+  {{/if}}
+  {{#if book_title}}
+      <h4 class="title-size">Book Title: <span class="bold-title">{{book_title}}</span></h4>
+  {{/if}}
+  {{#if alt_title}}
+    <h4 class="title-size">Book Alt Title: <span class="bold-title">{{alt_title}}</span></h4>
+  {{/if}}
+    {{#if author}}
+        <p class="info-size"><span class="labels">Author: </span>{{author}}</p>
+    {{/if}}
+  </div>
+    <a class="comment-text" href="/books/{{id}}">{{comments.length}} comment(s)</a>

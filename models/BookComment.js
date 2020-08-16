@@ -1,15 +1,21 @@
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Vote extends Model {};
+class BookComment extends Model {}
 
-Vote.init(
-    {
-      id: {
+BookComment.init(
+  {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
+      },
+      comment_text: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+              len: [4]
+          }
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -19,23 +25,21 @@ Vote.init(
           key: 'id'
         }
       },
-      // do we need to add a different id for book?
       post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
           model: 'movie',
           key: 'id'
-        }
-      }
-    },
-    {
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'vote'
-    }
-  );
+  }
+}
+},
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'bookcomment'
+  }
+);
 
-module.exports = Vote;
+module.exports = BookComment;

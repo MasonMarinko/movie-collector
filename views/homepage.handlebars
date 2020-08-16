@@ -1,7 +1,31 @@
-<ol class="post-list">
-  {{#each movies as |movie|}}
-  <li>
-    {{> post-info movie }}
-  </li>
-  {{/each}}
-</ol>
+{{#if movies.length}}
+<h2 class="title-top dashboard-title">Latest Community Movies</h2>
+<section>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
+    {{#each movies as |movie|}}
+    <li class="movie-spacing">
+      {{> post-info movie}}
+      <p> Posted by {{user.username}} on {{format_date created_at}}</p>
+    </li>
+    {{/each}}
+  </div>
+  </ol>
+</section>
+{{/if}}
+
+{{#if books.length}}
+<h2 class="title-top dashboard-title">Latest Community Books</h2>
+<section>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
+    {{#each books as |book|}}
+    <li class="movie-spacing">
+      {{> book-info book}}
+      <p> Posted by {{user.username}} on {{format_date created_at}}</p>
+    </li>
+    {{/each}}
+  </div>
+  </ol>
+</section>
+{{/if}}

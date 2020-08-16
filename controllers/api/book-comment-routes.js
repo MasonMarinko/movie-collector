@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Comment, Movie, Book } = require('../../models');
+const { BookComment, Comment, Movie, Book } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
-    Comment.findAll({
+    BookComment.findAll({
         attributes: [
             'id', 
             'comment_text', 
             'user_id', 
             'post_id',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE movie.id = vote.post_id)'), 'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
         ],
         order: [[ 'created_at', 'DESC']],
         include: [
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // check the session
   if (req.session) {
-    Comment.create({
+    BookComment.create({
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
       // use the id from the session
@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // added Book to delete
-         (Movie).destroy({
+         (Book).destroy({
           where: {
             id: req.params.id
           }

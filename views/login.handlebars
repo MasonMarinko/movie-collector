@@ -1,23 +1,15 @@
-<form class="login-form">
-  <div class="usernamepw">
-    <label for="username-login">Username:</label>
-    <input type="text" id="username-login" />
-  </div>
-  <div class="usernamepw">
-    <label for="password-login">Password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit" id="login">Login</button>
-  </div>
-</form>
-<div class="signup-wrapper">
-  <div class="specific-wrapper">
-  <div class="orKey">
-    OR </br>
-    </div>
-<button onclick="window.location.href='/signup';" type="click" id="signup-2">Signup</button>
-</div>
-</div>
 
-<script src="/javascript/login.js"></script>
+<div class="login-page-img">
+  <input type="radio" checked id="toggle--login" name="toggle" class="ghost" />
+  <input type="radio" id="toggle--signup" name="toggle" class="ghost" />
+
+  <form class="login-form form form--login framed">
+    <input id="username-login" type="text" placeholder="Username" class="input input--top" />
+    <input id="password-login" type="password" placeholder="Password" class="input" />
+    <input id="login" type="submit" value="Log in" class="input input--submit" />
+    
+    <label onclick="window.location.href='/signup';" type="click" for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+
+  <script src="/javascript/login.js"></script>
+</div>

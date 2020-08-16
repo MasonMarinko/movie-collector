@@ -1,5 +1,4 @@
 async function editFormHandler(event) {
-    event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const post_url = document.querySelector('input[name="post-url"]').value.trim();
@@ -32,4 +31,4 @@ async function editFormHandler(event) {
 
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-post-form-movie').addEventListener('submit', editFormHandler);

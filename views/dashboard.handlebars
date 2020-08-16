@@ -1,12 +1,10 @@
-<section>
-  <h2 class="title-top dashboard-title">Add New Movie</h2>
-  <form class="new-post-form">
-    <label id="media" for="media">Choose Your Media Type:</label>
-    <select name="books-movies" id="books-movies">
-      <option id="movies-selection">Movies</option>
-      <option id="books-selection">Books</option>
-    </select>
-    <div>
+<div class="video">
+<a class="tool-tip" target="_blank" href="https://youtu.be/9YB0--9IDyU" title="Click me to watch short video!">Need help on how to add your Movie<br/> or Book Cover Image? Click Here!</a>
+</div>
+<section class="selection-media">
+  <form class="new-post-form-movie">
+      <h2 class="title-top dashboard-title">Add New Movie</h2>
+    <div class="media-input">
       <label for="post-title">Movie Title</label>
       <input type="text" class="post-title" type="text" id="post-title" name="post-title" />
     </div>
@@ -26,20 +24,62 @@
       <button type="submit" class="btn">Create</button>
     </div>
   </form>
+
+  <form class="new-post-form-book">
+  <h2 class="title-top dashboard-title">Add New Book</h2>
+    <div>
+      <label for="post-title">Book Title</label>
+      <input type="text" class="post-title" type="text" id="post-title" name="post-booktitle" />
+    </div>
+    <div>
+      <label for="post-url">Book Cover Image URL</label>
+      <input type="text" class="post-title" id="post-url" name="post-bookurl" />
+    </div>
+    <div>
+      <label for="post-url">Alternative Title</label>
+      <input type="text" class="post-title" id="post-director" name="post-alttitle" />
+    </div>
+    <div>
+      <label for="post-url">Author</label>
+      <input type="text" class="post-title" id="post-actors" name="post-author" />
+    </div>
+    <div class="save-delete-buttons">
+      <button type="submit" class="btn">Create</button>
+    </div>
+  </form>
 </section>
+
 <hr style="border: 4px solid blue;" />
 {{#if movies.length}}
+  <h2 class="title-top dashboard-title">Your Movies</h2>
 <section>
-  <h2 class="title-top dashboard-title">Your Media</h2>
-  <ol>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
     {{#each movies as |movie|}}
-    <li>
-      <a href="/dashboard/edit/{{movie.id}}" class="edit-link">Edit ({{title}})</a>
+    <li class="movie-spacing">
+      <a href="/dashboard/edit/movies/{{movie.id}}" class="edit-link">Edit</a>
       {{> post-info movie}}
     </li>
     {{/each}}
+  </div>
   </ol>
 </section>
 {{/if}}
-</div>
+
+{{#if books.length}}
+  <h2 class="title-top dashboard-title">Your Books</h2>
+<section>
+  <ol class="movie-max">
+    <div class="movie-wrapper">
+    {{#each books as |book|}}
+    <li class="movie-spacing">
+      <a href="/dashboard/edit/books/{{book.id}}" class="edit-link">Edit</a>
+      {{> book-info book}}
+    </li>
+    {{/each}}
+  </div>
+  </ol>
+</section>
+{{/if}}
+
 <script src="/javascript/add-post.js"></script>
