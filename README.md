@@ -2,7 +2,7 @@
 
 ## Links
 
-Demo Video: [Media Collector Demo Video](https://youtu.be/9YB0--9IDyU)
+Demo Video: [Media Collector Demo Video](https://youtu.be/R0ZZsHECZQ0)
 
 Repository Link: [Media Collector Repo](https://github.com/masonmarinko/movie-collector)
 
