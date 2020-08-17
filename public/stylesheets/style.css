@@ -1,4 +1,86 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2.5em 2em 0em;
+    background: #f5f7f9;
+        font-size: 1.5em;
+        color: #346;
+        font-family: Signika, -apple-system, sans-serif;
+}
+
+.signup-section {
+    margin: 0em auto 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+input {
+    display: block;
+    margin: .5em auto 0em;
+    padding: 0.5em 1em 0.5em 0.7em;
+    width: 100%;
+    border: none;
+    background: rgba(0,0,0,0.05);
+    color: rgba(0,0,0,0.8);
+    font-size: 2em;
+    line-height: 0;
+        transition: all .5s linear;
+}
+
+input:hover, input:focus {
+    outline: 0;
+    transition: all .5s linear;
+    box-shadow: inset 0px 0px 10px #ccc;
+}
+
+meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+            
+    margin: 0 auto 1em;
+    width: 775px;
+    height: .5em;
+    
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }
+
+.feedback {
+    color: #9ab;
+    font-size: 30px;
+    padding: 0 .25em;
+    font-family: Courgette, cursive;
+    margin-top: 1em;
+}
+
+#password-strength-text {
+  font-size: 20px;
+  width: 775px;
+  padding-bottom: 50px;
+}
 
 :root {
 	/* Base font size */
@@ -82,6 +164,7 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   border: 1px solid #333;
+  margin: 12px;
 }
   .input:focus {
     outline: none;
@@ -190,18 +273,32 @@ html, body {
 .selection-media {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 #username-login {
   height: 60px;
-  width: 500px;
+  width: 775px;
   font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
 }
 
 #username-signup {
   height: 60px;
-  width: 500px;
-  font-size: 17px;
+  width: 775px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
+}
+
+#password {
+  height: 60px;
+  width: 775px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
+  border: 1px solid #333;
 }
 
 #password-login {
@@ -268,6 +365,12 @@ section {
   font-size: 100px;
   width: 100%;
   text-align: center;
+}
+
+.login-page-img {
+  background: 
+    url(https://lh3.googleusercontent.com/proxy/n9a0T6EqtJs6zbEci6ytsxtpz303kLhARLT_mAlDhpR_5OqqG4Ux2OnQDdlWkYa-lR2nFFrJTJL5EMXcm8OHad_vak4rYNQbYhTzfIqBOt80anKm3UuKSxcZaPIzLgN4bbX4iVgxIlTpG_81xcNkQvOylhx4UiyTLOqjYn8BV7cLkK8N6zJnBXm3KFhuWR6zwwdQamNKPvcHe5JdqsB6ZPbVXoAmSZaC)no-repeat center;
+  background-size: cover;
 }
 
 .dashboard-title {
@@ -509,6 +612,10 @@ form label {
   flex-direction: column;
 }
 
+.hello-name {
+  font-size: 30px;
+}
+
 nav {
   display: flex;
   justify-content: start;
@@ -574,6 +681,7 @@ header h1 {
 .movie-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie-spacing {
@@ -648,10 +756,6 @@ input.break {
   color: #225ca3;
 }
 
-.click-me {
-  
-}
-
 .media-wrapper {
   display: flex;
 }
@@ -705,10 +809,6 @@ input.break {
   padding-top: 30px;
 }
 
-.new-post-form-movie {
-  padding-right: 200px;
-}
-
 .new-post-form-movie input {
   width: 500px;
   height: auto;
@@ -732,4 +832,77 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 30px;
+}
+
+@media screen and (max-width: 980px) {
+
+  .title-top {
+    display: flex;
+    padding-bottom: 20px;
+    height: 60px;
+    font-size: 100px;
+    color: #fff;
+    font-weight: bold;
+    transition: color .1s;
+    justify-content: center;
+  }
+
+  .headline {
+    height: 300px
+  }
+
+  .dashboard-title {
+    display: flex;
+    padding-bottom: 20px;
+    height: 60px;
+    font-size: 50px;
+    color: #225ca3;
+    font-weight: bold;
+    transition: color .1s;
+    justify-content: center;
+  }
+
+.movie-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    justify-content: center;
+}
+
+.movie-spacing {
+  padding-right: 10px;
+  padding-bottom: 60px;
+}
+
+#password {
+    height: 60px;
+    width: 640px;
+    font-size: 20px;
+    margin: 12px;
+    background-color: rgba(255,255,255,.9);
+    border: 1px solid #333;
+}
+
+#password-strength-text {
+    font-size: 20px;
+    width: 640px;
+    padding-bottom: 50px;
+}
+
+#username-signup {
+  height: 60px;
+  width: 640px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
+}
+
+#username-login {
+  height: 60px;
+  width: 640px;
+  font-size: 20px;
+  margin: 12px;
+  background-color: rgba(255,255,255,.9);
+}
+
 }
