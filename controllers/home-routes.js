@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
       .then(dbPostData => {
         // pass a single post object into the homepage template
         movies = dbPostData.map(post => post.get({ plain: true }));
-      })
+      }),
       Book.findAll({
         attributes: [
           'id',
