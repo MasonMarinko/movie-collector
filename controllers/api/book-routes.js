@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 'alt_title',
                 'author',
                 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
+                // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE book.id = vote.post_id)'), 'vote_count']
             ],
             include: [
                 // include the Comment model here:

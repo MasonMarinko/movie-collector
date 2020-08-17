@@ -87,15 +87,27 @@ Vote.belongsTo(Book, {
     foreignKey: 'post_id'
   });
 
-  Comment.belongsTo(Book, {
-    foreignKey: 'post_id'
-  });
+  // Comment.belongsTo(Book, {
+  //   foreignKey: 'post_id'
+  // });
   
-  Book.hasMany(Comment, {
-    foreignKey: 'post_id'
-  });
+  // Book.hasMany(Comment, {
+  //   foreignKey: 'post_id'
+  // });
   Book.hasMany(BookComment, {
     foreignKey: 'post_id'
+  });
+
+  BookComment.belongsTo(Book, {
+    foreignKey: 'post_id'
+  });
+
+  User.hasMany(BookComment, {
+    foreignKey: 'post_id'
+  });
+
+  BookComment.belongsTo(User, {
+    foreignKey: 'user_id'
   });
 
 module.exports = { User, Movie, Vote, Comment, Book, BookComment };
