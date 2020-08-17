@@ -7,6 +7,7 @@ class Book extends Model {
         return models.Vote.create({
             user_id: body.user_id,
             post_id: body.post_id,
+            post_url: body.post_url,
             book_title: body.book_title,
             alt_title: body.alt_title,
             author: body.author

@@ -4,7 +4,7 @@ const {
     Movie,
     User,
     Vote,
-    Comment
+    Comment, 
 } = require('../../models');
 const withAuth = require('../../utils/auth')
 
